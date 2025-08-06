@@ -35,5 +35,5 @@ Index is available at this path in the docker
 3) Create a new google project and upload the image (pulled from dockerhub) to Google Container Registry (GCR) following instructions above ^^^ 
 4) Log onto google console to confirm the image exists, finally in the IAM for that specific container add AllUsers as roles/storage.objectViewer to allow dsub to read the image
 
-If everything worked finally in all of us you can reference this docker image in your dsub call to load the t1k environment: gcr.io/jg-public-docker-gcp/jg-t1k
+If everything worked finally in all of us you can reference this docker image in your dsub call to load the environment: gcr.io/jg-public-docker-gcp/jg-pathogen
 
