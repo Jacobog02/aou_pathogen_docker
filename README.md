@@ -14,12 +14,18 @@ Neccesary tools:
 1) gatk-4.2.6.0 ## No other GATK version can be used the remote PrintReads function screams bloody murder
 * https://hub.docker.com/r/broadinstitute/gatk/tags
 i.e. FROM broadinstitute/gatk:4.2.6.0
-2) {TOOL}
+2) Bowtie2 
+3) BWA (just in case you want it) 
 
 # DOCKERFILE
 My approach is to like... minimize the tools I need to install.
 That said, having multiple docker environments for each step increases the costs for spinning up various VMs and sycronizing the batches on a google bucket. STRIKE THE BAlANCE 
 > htslib was old so I had to do a manual apt-get install for the developer version.. 
+
+I loaded gatk, then I installed git, then I installed bt2 and bwa, finally I clone a public repo with the fasta files and indexed them
+
+Index is available at this path in the docker 
+`~/bin/pathogen_reference/ref/ukb_pathogens_longread_toxo` 
 
 # Workflow 
 
@@ -31,4 +37,3 @@ That said, having multiple docker environments for each step increases the costs
 
 If everything worked finally in all of us you can reference this docker image in your dsub call to load the t1k environment: gcr.io/jg-public-docker-gcp/jg-t1k
 
-JG: I am now realizing I did not put T1K on the path... hopefully I can deal with that since I have to reference the reference seqeunces 

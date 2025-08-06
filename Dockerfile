@@ -21,5 +21,5 @@ RUN cd ~/bin/ && wget https://github.com/lh3/bwa/archive/refs/tags/v0.7.18.tar.g
 ENV PATH="${HOME}/bin/bwa-0.7.18/:${PATH}"
 
 
-## Now clone the github repo with the indexed reference fasta 
-
+## Now clone the github repo with the indexed reference fasta
+RUN cd ~/bin/ && git clone https://github.com/Jacobog02/pathogen_reference.git && cd ~/bin/pathogen_reference/ref/ && bash index_stuff.sh
